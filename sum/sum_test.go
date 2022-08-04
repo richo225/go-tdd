@@ -11,3 +11,10 @@ func TestSum(t *testing.T) {
 		t.Errorf("expected %q, but got %q", expected, sum)
 	}
 }
+
+func BenchmarkSum(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		Sum([3]int{1, 2, 3})
+	}
+	// Expected output 6
+}
